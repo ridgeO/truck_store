@@ -6,17 +6,17 @@
   <div class="row">
 
   <% @trucks.each do |truck| %>
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <img src=<%= truck.image %> alt="...">
-          <div class="caption" style="text-align: center;">
-            <h3><%= "$#{truck.price}/month" %></h3>
-            <p><%= "#{truck.year} #{truck.make} #{truck.model}" %></p>
-            <p><%= "#{number_with_delimiter(truck.mileage, :delimiter => ",")} miles" %></p>
-            <p><a href=<%= truck_path(truck) %> class="btn btn-primary" role="button">Learn More</a> <a href="#" class="btn btn-default" role="button">Lease Now</a></p>
-          </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <img src=<%= truck.image %> alt="...">
+        <div class="caption" style="text-align: center;">
+          <h3><%= "$#{truck.price}/month" %></h3>
+          <p><%= "#{truck.year} #{truck.make} #{truck.model}" %></p>
+          <p><%= "#{number_with_delimiter(truck.mileage, :delimiter => ",")} miles" %></p>
+          <p><a href=<%= truck_path(truck) %> class="btn btn-primary" role="button">Learn More</a> <a href="#" class="btn btn-default" role="button">Lease Now</a></p>
         </div>
       </div>
+    </div>
   <% end %>
 </div>
 

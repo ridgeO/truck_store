@@ -1,13 +1,24 @@
 <% provide(:title, "Home") %>
 <div class="container-fluid text-center">
-  <h1>TRUCKStore</h1>
-  <h3>Your online truck supplier</h3>
+  <h1 style="font-size: 140px;">TRUCKStore</h1>
+  <h3>Put your trucks to work</h3>
   <br>
   <% if !current_user %>
-    <span><%= link_to "Sign In", new_user_session_path, :class => "btn-hollow" %></span>
-    <br>
-    <span><%= link_to "Sign up now!", new_user_registration_path, :class => "btn-solid" %></span>
+    <%= button_to("SIGN UP NOW!", new_user_registration_path, class:"btn", :method => :get) %>
   <% end %>
+  <hr>
+  <h2>What our customers are saying</h2>
   <br>
-  <br>
+  <% @reviews.each do |review| %>
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <img src="http://placehold.it/300x300.png/000" alt="...">
+        <div class="caption" style="text-align: center;">
+          <p style="font-style: italic;">"<%= review.text %>"</p>
+          <h4><%= review.name %></h4>
+          <p>Turf Manager</p>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>
