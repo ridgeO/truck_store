@@ -1,39 +1,57 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <h1 style="text-align: center;">INVENTORY</h1>
+  <!--<%= link_to "+ Add New Truck", new_truck_path, class:"btn btn-default btn-lg" %>-->
+  <br>
+  <br>
+  <div class="row">
 
-<h1>Trucks</h1>
+  <% @trucks.each do |truck| %>
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <img src=<%= truck.image %> alt="...">
+          <div class="caption" style="text-align: center;">
+            <h3><%= "$#{truck.price}/month" %></h3>
+            <p><%= "#{truck.year} #{truck.make} #{truck.model}" %></p>
+            <p><%= "#{number_with_delimiter(truck.mileage, :delimiter => ",")} miles" %></p>
+            <p><a href=<%= truck_path(truck) %> class="btn btn-primary" role="button">Learn More</a> <a href="#" class="btn btn-default" role="button">Lease Now</a></p>
+          </div>
+        </div>
+      </div>
+  <% end %>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Year</th>
-      <th>Make</th>
-      <th>Model</th>
-      <th>Price</th>
-      <th>Price</th>
-      <th>Owner</th>
-      <th>Availability</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @trucks.each do |truck| %>
+<!--  <table>
+    <thead>
       <tr>
-        <td><%= truck.year %></td>
-        <td><%= truck.make %></td>
-        <td><%= truck.model %></td>
-        <td><%= truck.price %></td>
-        <td><%= truck.price %></td>
-        <td><%= truck.owner %></td>
-        <td><%= truck.availability %></td>
-        <td><%= link_to 'Show', truck %></td>
-        <td><%= link_to 'Edit', edit_truck_path(truck) %></td>
-        <td><%= link_to 'Destroy', truck, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Year</th>
+        <th>Make</th>
+        <th>Model</th>
+        <th>Price</th>
+        <th>Price</th>
+        <th>Owner</th>
+        <th>Availability</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
-
-<%= link_to 'New Truck', new_truck_path %>
+    <tbody>
+      <% @trucks.each do |truck| %>
+        <tr>
+          <td><%= truck.year %></td>
+          <td><%= truck.make %></td>
+          <td><%= truck.model %></td>
+          <td><%= truck.price %></td>
+          <td><%= truck.price %></td>
+          <td><%= truck.owner %></td>
+          <td><%= truck.availability %></td>
+          <td><%= link_to 'Show', truck %></td>
+          <td><%= link_to 'Edit', edit_truck_path(truck) %></td>
+          <td><%= link_to 'Destroy', truck, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+-->
+  <br>
+</div>

@@ -32,10 +32,14 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-# Use devise for authentication
+# Use Devise for authentication
 gem 'devise'
 # Use Bootstrap for Styling
 gem 'bootstrap-sass'
+# Use Faker to seed database
+gem 'faker'
+# Use simpleform for form styling and bootstrap integration
+gem 'simple_form'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

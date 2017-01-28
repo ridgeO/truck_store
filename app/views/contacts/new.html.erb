@@ -1,0 +1,23 @@
+<div class="container" style="max-width: 600px;">
+  <h2>READY TO SEE TRUCKSTORE IN ACTION?</h2>
+  <p>Get more information for your organization</p>
+  <%= simple_form_for @contact do |f| %>
+    <% if @contact.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this truck from being saved:</h2>
+
+        <ul>
+        <% @contact.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :organization %>
+    <%= f.input :job_title %>
+    <%= f.input :email %>
+    <%= f.submit class:"btn"%>
+  <% end %>
+</div>

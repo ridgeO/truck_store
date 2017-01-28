@@ -1,52 +1,19 @@
-<%= form_for(truck) do |f| %>
-  <% if truck.errors.any? %>
+<%= simple_form_for @truck do |f| %>
+  <% if @truck.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(truck.errors.count, "error") %> prohibited this truck from being saved:</h2>
+      <h2><%= pluralize(@truck.errors.count, "error") %> prohibited this truck from being saved:</h2>
 
       <ul>
-      <% truck.errors.full_messages.each do |message| %>
+      <% @truck.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :year %>
-    <%= f.number_field :year %>
-  </div>
-
-  <div class="field">
-    <%= f.label :make %>
-    <%= f.text_field :make %>
-  </div>
-
-  <div class="field">
-    <%= f.label :model %>
-    <%= f.text_field :model %>
-  </div>
-
-  <div class="field">
-    <%= f.label :price %>
-    <%= f.text_field :price %>
-  </div>
-
-  <div class="field">
-    <%= f.label :price %>
-    <%= f.text_field :price %>
-  </div>
-
-  <div class="field">
-    <%= f.label :owner %>
-    <%= f.text_field :owner %>
-  </div>
-
-  <div class="field">
-    <%= f.label :availability %>
-    <%= f.text_field :availability %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <%= f.input :year %>
+    <%= f.input :make %>
+    <%= f.input :model %>
+    <%= f.input :price %>
+    <%= f.input :owner %>
+    <%= f.submit class:"btn"%>
 <% end %>

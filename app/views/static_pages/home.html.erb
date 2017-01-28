@@ -1,0 +1,13 @@
+<% provide(:title, "Home") %>
+<div class="container-fluid text-center">
+  <h1>TRUCKStore</h1>
+  <h3>Your online truck supplier</h3>
+  <br>
+  <% if !current_user %>
+    <span><%= link_to "Sign In", new_user_session_path, :class => "btn-hollow" %></span>
+    <br>
+    <span><%= link_to "Sign up now!", new_user_registration_path, :class => "btn-solid" %></span>
+  <% end %>
+  <br>
+  <br>
+</div>

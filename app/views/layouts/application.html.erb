@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DeviseBasic</title>
+    <title>TRUCKStore <%= yield :title %></title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -13,6 +13,8 @@
     <div class="container">
       <% if notice %><div class="alert alert-info"><%= notice %></div><% end %>
       <% if alert %><div class="alert alert-warning"><%= alert %></div><% end %>
-    <%= yield %>
+      <%= yield %>
+    </div>
   </body>
+  <%= render partial: "shared/footer.html.erb" %>
 </html>
