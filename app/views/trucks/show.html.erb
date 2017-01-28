@@ -16,8 +16,8 @@
 </p>
 
 <p>
-  <strong>Price:</strong>
-  <%= @truck.price %>
+  <strong>Mileage:</strong>
+  <%= number_with_delimiter(@truck.mileage, :delimiter => ",") %>
 </p>
 
 <p>
