@@ -1,0 +1,28 @@
+<% provide(:title, "Fleet") %>
+<div class="container-fluid text-center">
+  <h1>INVENTORY</h1>
+  <br>
+  <br>
+  <table class="table-striped" style="margin: 0px auto; padding: 10px;">
+    <tr>
+      <th style="text-align: center;">Year</th>
+      <th style="text-align: center;">Make</th>
+      <th style="text-align: center;">Model</th>
+      <th style="text-align: center;">Lease Rate</th>
+      <th style="text-align: center;">Mileage</th>
+      <th style="text-align: center;">Owner</th>
+      <th style="text-align: center;">Status</th>
+    </tr>
+  <% @trucks.each do |truck| %>
+    <tr>
+      <td style="padding:0 15px 0 15px;"><%= truck.year %></td>
+      <td style="padding:0 15px 0 15px;"><%= truck.make %></td>
+      <td style="padding:0 15px 0 15px;"><%= truck.model %></td>
+      <td style="padding:0 15px 0 15px;"><%= truck.price %></td>
+      <td style="padding:0 15px 0 15px;"><%= truck.mileage %></td>
+      <td style="padding:0 15px 0 15px;"><%= truck.owner %></td>
+      <td style="padding:0 15px 0 15px;"><%= truck.availability %></td>
+    </tr>
+  <% end %>
+  </table>
+</div>

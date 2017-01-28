@@ -5,6 +5,8 @@
   <br>
   <% if !current_user %>
     <%= button_to("SIGN UP NOW!", new_user_registration_path, class:"btn", :method => :get) %>
+    <br>
+    <%= button_to("REQUEST MORE INFORMATION", new_contact_path, class:"btn", :method => :get) %>
   <% end %>
   <hr>
   <h2>What our customers are saying</h2>
