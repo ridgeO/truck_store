@@ -19,3 +19,13 @@
 navbar navbar-default{
   height: 200px;
 }
+
+a:hover{
+  background-color: inherit;
+  color: green;
+  text-decoration: none;
+}
+
+.btn:hover{
+  background-color: lightblue;
+}
