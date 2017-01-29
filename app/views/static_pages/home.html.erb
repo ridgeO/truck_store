@@ -33,7 +33,8 @@
   <h2>I want to know more</h2>
   <br>
   <h4> Enter your email bellow to request more information or <%= link_to("SIGN UP NOW!", new_user_registration_path) %> to start your journey with TRUCKStore</h4>
-  <%= email_field("email", "email@example.com") %>
+  <br>
+  <%= email_field_tag("email", "email@example.com") %>
   <br>
   <br>
   <%= button_to("REQUEST MORE INFORMATION", new_contact_path, class:"btn", :method => :get) %>
