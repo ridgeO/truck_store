@@ -1,51 +1,47 @@
 <% provide(:title, "Home") %>
 <div class="container-fluid text-center">
-  <div>
-    <h1 style="font-size: 140px;">TRUCKStore</h1>
-    <h3>Put your trucks to work</h3>
-    <br>
-    <% if !current_user %>
-      <%= button_to("SIGN UP NOW!", new_user_registration_path, class:"btn", :method => :get) %>
-      <br>
-      <%= button_to("REQUEST MORE INFORMATION", new_contact_path, class:"btn", :method => :get) %>
-    <% end %>
-  </div>
-  <hr>
-  <div>
-    <h2>What we do</h2>
-    <br>
-    <p style="text-align: left;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget posuere diam. Maecenas consectetur nulla eu accumsan bibendum. Praesent interdum ut sapien ut condimentum. Proin non velit dictum, volutpat metus in, luctus ante. Quisque vitae magna ante. Suspendisse turpis lorem, fringilla nec molestie et, volutpat eu ipsum. Cras tristique et nunc at vehicula. Fusce nibh quam, viverra ac aliquam vitae, tincidunt quis magna. Maecenas non posuere augue. Pellentesque quis massa id orci sodales consectetur vel in felis. Praesent consequat nulla id dolor tempus egestas sed non erat. Nulla consequat leo ut suscipit convallis.</p>
-    <p style="text-align: left;">Morbi nec elementum eros. Pellentesque rutrum, nunc in posuere volutpat, nibh mauris cursus risus, a iaculis diam magna vel tortor. Fusce sodales, neque eu malesuada vehicula, libero lorem gravida justo, a euismod ligula mi aliquam turpis. Nullam ullamcorper erat a dapibus ultrices. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer ultricies, nulla id eleifend feugiat, est ex dapibus erat, vitae pellentesque lectus metus eleifend neque. Maecenas interdum lorem sit amet nibh congue, et mollis massa ultricies.</p>
-    <br>
-  </div>
-  <hr>
-  <div>
-    <h2>What our customers are saying</h2>
-    <br>
-    <% @reviews.each do |review| %>
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <img src="http://placehold.it/300x300.png/000" alt="...">
-          <div class="caption" style="text-align: center;">
-            <p style="font-style: italic;">"<%= review.text %>"</p>
-            <h4><%= review.name %></h4>
-            <p>TRUCKStore Driver</p>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  </div>
+  <h1 style="font-size: 140px;">TRUCKStore</h1>
+  <h3>Put your trucks to work</h3>
   <br>
-  <br>
-  <hr>
-  <div>
-    <h2>Want to know more</h2>
-    <br>
-    <h4>Enter your email bellow to request more information or <%= link_to("SIGN UP NOW!", new_user_registration_path) %> to start your journey with TRUCKStore</h4>
-    <br>
-    <%= email_field_tag("email", "email@example.com") %>
-    <br>
+  <% if !current_user %>
+    <%= button_to("SIGN UP NOW!", new_user_registration_path, class:"btn", :method => :get) %>
     <br>
     <%= button_to("REQUEST MORE INFORMATION", new_contact_path, class:"btn", :method => :get) %>
-  </div>
+  <% end %>
+</div>
+<hr>
+<div class="container-fluid text-center">
+  <h2>What we do</h2>
+  <br>
+  <p style="text-align: left;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget posuere diam. Maecenas consectetur nulla eu accumsan bibendum. Praesent interdum ut sapien ut condimentum. Proin non velit dictum, volutpat metus in, luctus ante. Quisque vitae magna ante. Suspendisse turpis lorem, fringilla nec molestie et, volutpat eu ipsum. Cras tristique et nunc at vehicula. Fusce nibh quam, viverra ac aliquam vitae, tincidunt quis magna. Maecenas non posuere augue. Pellentesque quis massa id orci sodales consectetur vel in felis. Praesent consequat nulla id dolor tempus egestas sed non erat. Nulla consequat leo ut suscipit convallis.</p>
+  <p style="text-align: left;">Morbi nec elementum eros. Pellentesque rutrum, nunc in posuere volutpat, nibh mauris cursus risus, a iaculis diam magna vel tortor. Fusce sodales, neque eu malesuada vehicula, libero lorem gravida justo, a euismod ligula mi aliquam turpis. Nullam ullamcorper erat a dapibus ultrices. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer ultricies, nulla id eleifend feugiat, est ex dapibus erat, vitae pellentesque lectus metus eleifend neque. Maecenas interdum lorem sit amet nibh congue, et mollis massa ultricies.</p>
+  <br>
+</div>
+<hr>
+<div class="container-fluid text-center">
+  <h2>What our customers are saying</h2>
+  <br>
+  <% @reviews.each do |review| %>
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <img src="http://placehold.it/300x300.png/000" alt="...">
+        <div class="caption" style="text-align: center;">
+          <p style="font-style: italic;">"<%= review.text %>"</p>
+          <h4><%= review.name %></h4>
+          <p>TRUCKStore Driver</p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+<hr>
+<div class="container-fluid text-center">
+  <h2>Want to know more</h2>
+  <br>
+  <h4>Enter your email bellow to request more information or <%= link_to("SIGN UP NOW!", new_user_registration_path) %> to start your journey with TRUCKStore</h4>
+  <br>
+  <%= email_field_tag("email", "email@example.com") %>
+  <br>
+  <br>
+  <%= button_to("REQUEST MORE INFORMATION", new_contact_path, class:"btn", :method => :get) %>
 </div>
